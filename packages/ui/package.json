@@ -9,7 +9,7 @@
     "dist/.."
   ],
   "scripts": {
-    "build": "node esbuild.config.js && tsc",
+    "build": "node esbuild.config.js && tsc && tailwindcss -i ./src/styles.css -o ./dist/tailwind.css",
     "watch": "node esbuild.config.js --watch && tsc -w",
     "tailwindcss": "tailwindcss -i ./src/styles.css -o ./dist/tailwind.css --watch",
     "lint": "eslint . --max-warnings 0"
