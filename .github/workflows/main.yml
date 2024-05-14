@@ -22,4 +22,4 @@ jobs:
       - name: Run Storybook tests
         run: pnpm turbo test
         env:
-          TARGET_URL: "${{ github.event.deployment_status.target_url}}"
+          TARGET_URL: "https://design-monorepo.vercel.app/"
