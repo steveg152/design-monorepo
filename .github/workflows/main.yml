@@ -17,6 +17,8 @@ jobs:
         run: pnpm i
       - name: Install Playwright
         run: pnpm dlx playwright install --with-deps
+      - name: Print target url
+        run: echo ${{ github.event.deployment_status.target_url}}
       - name: Run Storybook tests
         run: pnpm turbo test
         env:
