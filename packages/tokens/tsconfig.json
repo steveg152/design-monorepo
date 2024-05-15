@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "CommonJS",
+    "target": "ES6",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "strict": true
+  },
+  "include": ["src"]
+}
