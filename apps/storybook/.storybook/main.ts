@@ -24,8 +24,8 @@ const config: StorybookConfig = {
     name: getAbsolutePath("@storybook/react-vite"),
     options: {},
   },
-  docs: {
-    autodocs: "tag",
-  },
+  // docs: {
+  //   autodocs: "tag",
+  // },
 };
 export default config;
