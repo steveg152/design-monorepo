@@ -17,9 +17,10 @@ jobs:
         run: pnpm i
       - name: Install Playwright
         run: pnpm dlx playwright install --with-deps
-      - name: Print deployment status object
-        run: echo "${{ github.event.deployment_status }}"
-      - name: Run Storybook tests
-        run: pnpm turbo test
-        env:
-          TARGET_URL: "https://design-monorepo.vercel.app/"
+      - name: Build Storybook
+        run: pnpm turbo build
+      - name: Serve Storybook and run tests
+        run: |
+          pnpm dlx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "pnpm dlx http-server ./apps/storybook/storybook-static --port 6006 --silent" \
+            "pnpm dlx wait-on tcp:6006 && pnpm turbo test"

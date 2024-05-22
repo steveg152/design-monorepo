@@ -21,54 +21,11 @@ importers:
         specifier: latest
         version: 1.13.3
 
-  apps/docs:
-    dependencies:
-      '@repo/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
-      '@storybook/addon-themes':
-        specifier: ^8.0.10
-        version: 8.0.10
-      next:
-        specifier: ^14.1.1
-        version: 14.1.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
-    devDependencies:
-      '@next/eslint-plugin-next':
-        specifier: ^14.1.1
-        version: 14.1.1
-      '@repo/eslint-config':
-        specifier: workspace:*
-        version: link:../../packages/eslint-config
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../../packages/typescript-config
-      '@types/eslint':
-        specifier: ^8.56.5
-        version: 8.56.5
-      '@types/node':
-        specifier: ^20.11.24
-        version: 20.11.24
-      '@types/react':
-        specifier: ^18.2.61
-        version: 18.2.61
-      '@types/react-dom':
-        specifier: ^18.2.19
-        version: 18.2.19
-      eslint:
-        specifier: ^8.57.0
-        version: 8.57.0
-      typescript:
-        specifier: ^5.3.3
-        version: 5.3.3
-
   apps/storybook:
     dependencies:
+      '@repo/tokens':
+        specifier: workspace:*
+        version: link:../../packages/tokens
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -222,6 +179,12 @@ importers:
         specifier: ^5.3.3
         version: 5.3.3
 
+  packages/tokens:
+    dependencies:
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+
   packages/typescript-config: {}
 
   packages/ui:
@@ -245,6 +208,9 @@ importers:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
+      '@repo/tokens':
+        specifier: workspace:*
+        version: link:../tokens
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
@@ -6250,6 +6216,11 @@ packages:
   typescript@5.3.3:
     resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
     engines: {node: '>=14.17'}
+
+  typescript@5.4.5:
+    resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
+    engines: {node: '>=14.17'}
+    hasBin: true
 
   ufo@1.5.3:
     resolution: {integrity: sha512-Y7HYmWaFwPUmkoQCUIAYpKqkOf+SbVj/2fJJZ4RJMCfZp0rTGwRbzQD+HghfnhKOjL9E01okqz+ncJskGYfBNw==}
@@ -14013,6 +13984,8 @@ snapshots:
       is-typedarray: 1.0.0
 
   typescript@5.3.3: {}
+
+  typescript@5.4.5: {}
 
   ufo@1.5.3: {}
 

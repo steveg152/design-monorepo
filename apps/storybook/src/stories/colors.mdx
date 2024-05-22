@@ -1,0 +1,17 @@
+import { palette } from "@repo/ui";
+import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
+
+<Meta title="Tokens/Colors" />
+
+<ColorPalette>
+  <ColorItem
+    title="Brand"
+    subtitle="Primary"
+    colors={{ Brand: palette.primary[400] }}
+  />
+  <ColorItem title="Success" colors={{ Brand: palette.success[400] }} />
+  <ColorItem title="Danger" colors={{ Brand: palette.danger[400] }} />
+  {Object.entries(palette).map(([name, value]) => (
+    <ColorItem key={name} title={name} colors={value} />
+  ))}
+</ColorPalette>
