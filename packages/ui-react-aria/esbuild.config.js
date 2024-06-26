@@ -14,6 +14,7 @@ const commonBuildOptions = {
   define: {
     "process.env.NODE_ENV": `"${process.env.NODE_ENV}"`,
   },
+  inject: ["./react-shim.js"],
 };
 
 // Build for ESM
