@@ -15,8 +15,6 @@ jobs:
           node-version: "latest"
       - name: Install dependencies
         run: pnpm i
-      - name: Cleanup Playwright
-        run: pnpm dlx playwright uninstall
       - name: Install Playwright
         run: pnpm dlx playwright install --with-deps
       - name: Build Storybook
