@@ -34,8 +34,23 @@ export const Unlabeled: Story = {
 
 export const Placeholder: Story = {
   args: { placeholder: "Placeholder" },
+  parameters: {
+    docs: {
+      description: { story: "A text input field with a placeholder." },
+    },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const input = await canvas.findByRole("textbox");
+    expect(input).toHaveAttribute("placeholder", "Placeholder");
+  },
 } satisfies Story;
 
 export const Disabled: Story = {
   args: { disabled: true },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const input = await canvas.findByRole("textbox");
+    expect(input).toBeDisabled();
+  },
 } satisfies Story;
