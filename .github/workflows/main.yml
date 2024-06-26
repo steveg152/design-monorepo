@@ -23,4 +23,5 @@ jobs:
         run: |
           pnpm dlx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "pnpm dlx http-server ./apps/storybook/storybook-static --port 6006 --silent" \
+            "pnpm exec playwright install" \
             "pnpm dlx wait-on tcp:6006 && pnpm turbo test"
