@@ -13,7 +13,8 @@
     "watch": "node esbuild.config.js --watch && tsc -w",
     "tailwindcss": "tailwindcss -i ./src/styles.css -o ./dist/tailwind.css --watch",
     "test": "vitest --run",
-    "lint": "eslint . --max-warnings 0"
+    "lint": "eslint . --max-warnings 0",
+    "clean": "rm -rf dist node_modules"
   },
   "devDependencies": {
     "@deanc/esbuild-plugin-postcss": "^1.0.2",

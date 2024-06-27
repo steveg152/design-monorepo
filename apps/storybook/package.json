@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "storybook build",
-    "test": "test-storybook"
+    "test": "test-storybook",
+    "clean": "rm -rf dist node_modules storybook-static"
   },
   "dependencies": {
     "@repo/tokens": "workspace:*",

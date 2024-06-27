@@ -13,7 +13,7 @@ const Input = ({ label, unlabeled, placeholder, ...props }: InputProps) => {
       <span
         className={clsx(
           "inline-flex py-1 font-semibold",
-          unlabeled && "sr-only"
+          unlabeled && "sr-only",
         )}
       >
         {label}
