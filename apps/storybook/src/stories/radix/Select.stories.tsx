@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Select } from "@repo/ui-react-aria";
+import { Select, SelectItem } from "@repo/ui-radix";
 import { expect, userEvent, within } from "@storybook/test";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<typeof Select> = {
-  title: "React Aria/Select",
+  title: "Radix/Select",
   component: Select,
   parameters: {},
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
@@ -30,9 +30,11 @@ const options = [
 export const Primary: Story = {
   render: (args) => {
     return (
-      <Select {...args} placeholder="Testing Select" items={options}>
+      <Select defaultValue={options[0].name} {...args}>
         {options.map((option) => (
-          <Select.Item key={option.id}>{option.name}</Select.Item>
+          <SelectItem key={option.id} value={option.name}>
+            {option.name}
+          </SelectItem>
         ))}
       </Select>
     );

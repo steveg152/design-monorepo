@@ -22,8 +22,8 @@
     "./tailwind.css": "./dist/tailwind.css"
   },
   "scripts": {
-    "build": "node esbuild.config.js && tsc && tailwindcss -i ./src/styles.css -o ./dist/tailwind.css",
-    "watch": "node esbuild.config.js --watch && tsc -w",
+    "build": "tsup && tsc && tailwindcss -i ./src/styles.css -o ./dist/tailwind.css",
+    "watch": "tsup --watch && tsc -w",
     "tailwindcss": "tailwindcss -i ./src/styles.css -o ./dist/tailwind.css --watch",
     "test": "vitest --run",
     "lint": "eslint . --max-warnings 0",
@@ -31,9 +31,10 @@
   },
   "devDependencies": {
     "@deanc/esbuild-plugin-postcss": "^1.0.2",
+    "@repo/build-config": "workspace:*",
     "@repo/eslint-config": "workspace:*",
-    "@repo/tokens": "workspace:*",
     "@repo/tailwind-utils": "workspace:*",
+    "@repo/tokens": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@turbo/gen": "^1.12.4",
     "@types/eslint": "^8.56.5",
@@ -48,6 +49,7 @@
     "rollup": "^4.18.0",
     "rollup-plugin-typescript2": "^0.36.0",
     "tslib": "^2.6.3",
+    "tsup": "^8.1.0",
     "typescript": "^5.3.3"
   },
   "dependencies": {

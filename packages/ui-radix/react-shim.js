@@ -1,6 +1,6 @@
 // react-shim.js
-const react = require("react");
-const reactDom = require("react-dom");
+import react from "react";
+import reactDom from "react-dom";
 window.React = react;
 window.ReactDOM = reactDom;
 

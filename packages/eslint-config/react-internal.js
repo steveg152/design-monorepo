@@ -10,11 +10,18 @@ const project = resolve(process.cwd(), "tsconfig.json");
 
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: ["eslint:recommended", "prettier", "eslint-config-turbo"],
+  extends: ["eslint:recommended", "prettier", "turbo"],
   plugins: ["only-warn"],
   globals: {
     React: true,
     JSX: true,
+  },
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    tsconfigRootDir: __dirname,
+  },
+  rules: {
+    "no-redeclare": [1, { builtinGlobals: false }],
   },
   env: {
     browser: true,
@@ -28,9 +35,18 @@ module.exports = {
   },
   ignorePatterns: [
     // Ignore dotfiles
-    ".*.js",
+    // "postcss.config.js",
+    // "tailwind.config.js",
+    // "esbuild.config.js",
+    // "rollup.config.js",
+    "react-shim.js",
+    "**/.*.js",
     "node_modules/",
     "dist/",
+    // ignore dot files
+    "**/.*",
+    // ignore . js files
+    "**/*.js",
   ],
   overrides: [
     // Force ESLint to detect .tsx files

@@ -1,5 +1,5 @@
-import { ChevronsDownUp, ChevronsUpDown } from "lucide-react";
 import React from "react";
+import { ChevronsUpDown } from "lucide-react";
 import {
   Button,
   Label,
@@ -18,7 +18,7 @@ interface MySelectProps<T extends object>
   label?: string;
   description?: string;
   items?: Iterable<T>;
-  children: React.ReactNode | ((item: T) => React.ReactNode);
+  children: React.ReactNode | (() => React.ReactNode);
 }
 
 function Select<T extends Object>({
@@ -51,7 +51,7 @@ function MyItem(props: ListBoxItemProps) {
   return (
     <ListBoxItem
       {...props}
-      className="group flex items-center gap-2 cursor-default select-none py-2 px-4 outline-none rounded text-slate-900 focus:bg-secondary focus:text-white"
+      className="group flex items-center gap-2 cursor-default select-none py-2 px-4 outline-none rounded text-slate-900 focus:bg-primary focus:text-white"
     />
   );
 }

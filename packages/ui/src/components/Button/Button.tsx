@@ -1,4 +1,4 @@
-import React from "react";
+import { forwardRef } from "react";
 import { cn } from "../../lib/utils";
 import { buttonVariants } from "../../variants/buttonVariants";
 import { VariantProps } from "class-variance-authority";
@@ -15,7 +15,7 @@ export interface ButtonProps
  */
 type SteveType = "steve" | "greco";
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ variant, size, children, steve, ...rest }, ref) => {
     return (
       <button
@@ -27,7 +27,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {children}
       </button>
     );
-  },
+  }
 );
 
 export default Button;

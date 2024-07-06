@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 import { Button } from "@repo/ui";
 import { TextInput } from "@repo/ui/components";
 import { Select } from "@repo/ui-react-aria";
-import "@repo/ui/tailwind.css";
+import "../global.css";
 import { Atom } from "lucide-react";
 
 export default function Page(): JSX.Element {
