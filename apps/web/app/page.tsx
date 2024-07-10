@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./page.module.css";
-import { Button } from "@repo/ui";
+import { Button } from "@repo/ui/components";
 import { TextInput } from "@repo/ui/components";
 import { Select } from "@repo/ui-react-aria";
 import "../global.css";

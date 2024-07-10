@@ -5,22 +5,13 @@ import { VariantProps } from "class-variance-authority";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  steve?: SteveType;
-}
-
-/**
- * Type representing the allowed values for the `steve` prop.
- * @type {"steve" | "greco"}
- */
-type SteveType = "steve" | "greco";
+    VariantProps<typeof buttonVariants> {}
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant, size, children, steve, ...rest }, ref) => {
+  ({ variant, size, children, ...rest }, ref) => {
     return (
       <button
         ref={ref}
-        id={steve}
         {...rest}
         className={cn(buttonVariants({ variant, size }), rest.className)}
       >
@@ -29,5 +20,4 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     );
   }
 );
-
 export default Button;

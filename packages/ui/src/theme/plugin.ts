@@ -1,6 +1,6 @@
 import plugin from "tailwindcss/plugin";
 import colors from "tailwindcss/colors";
-import { palette } from "@repo/tokens/dist/tokens";
+import { palette } from "@repo/tokens";
 
 const variables = {
   "--background": colors.slate["900"],
@@ -53,5 +53,5 @@ export const zeus = plugin(
       //   },
       // },
     },
-  },
+  }
 );

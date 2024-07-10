@@ -10,12 +10,12 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.js",
+      "import": "./dist/components/index.mjs",
+      "require": "./dist/components/index.js",
       "types": "./dist/components/index.d.ts"
     },
     "./components": {
-      "import": "./dist/components/index.js",
+      "import": "./dist/components/index.mjs",
       "require": "./dist/components/index.js",
       "types": "./dist/components/index.d.ts"
     },
@@ -27,10 +27,10 @@
     "tailwindcss": "tailwindcss -i ./src/styles.css -o ./dist/tailwind.css --watch",
     "test": "vitest --run",
     "lint": "eslint . --max-warnings 0",
-    "clean": "rm -rf dist node_modules"
+    "clean": "rm -rf dist node_modules",
+    "docs": "node script.js"
   },
   "devDependencies": {
-    "@deanc/esbuild-plugin-postcss": "^1.0.2",
     "@repo/build-config": "workspace:*",
     "@repo/eslint-config": "workspace:*",
     "@repo/tailwind-utils": "workspace:*",
@@ -42,21 +42,15 @@
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
     "autoprefixer": "^10.4.19",
-    "esbuild": "^0.21.1",
-    "esbuild-node-externals": "^1.13.1",
     "eslint": "^8.57.0",
     "react": "^18.2.0",
-    "rollup": "^4.18.0",
-    "rollup-plugin-typescript2": "^0.36.0",
+    "react-docgen-typescript": "^2.2.2",
     "tslib": "^2.6.3",
     "tsup": "^8.1.0",
     "typescript": "^5.3.3"
   },
   "dependencies": {
     "@headlessui/react": "^2.0.4",
-    "@rollup/plugin-commonjs": "^26.0.1",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-terser": "^0.4.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "install": "^0.13.0",

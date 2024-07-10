@@ -1,4 +1,4 @@
-import { Button, Form, TextInput } from "@repo/ui";
+import { Button, Form, TextInput } from "@repo/ui/components";
 import { Meta } from "@storybook/react";
 import { expect, fn, userEvent, within } from "@storybook/test";
 

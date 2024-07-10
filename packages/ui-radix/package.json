@@ -12,7 +12,6 @@
     "build": "rollup -c && tsc",
     "watch": "node esbuild.config.js --watch && tsc -w",
     "tailwindcss": "tailwindcss -i ./src/styles.css -o ./dist/tailwind.css --watch",
-    "test": "vitest --run",
     "lint": "eslint . --max-warnings 0",
     "clean": "rm -rf dist node_modules"
   },
