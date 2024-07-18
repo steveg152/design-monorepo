@@ -1,4 +1,4 @@
-const palette = {
+export const palette = {
   primary: {
     50: "#fdf9ed",
     100: "#f7edce",
@@ -39,14 +39,14 @@ const palette = {
     950: "#2f0b0b",
   },
 };
-const fontSizes = {
+export const fontSizes = {
   xs: "12",
   sm: "14",
   base: "16",
   lg: "18",
   xl: "20",
 };
-const spacing = {
+export const spacing = {
   px: "1px",
   0: "0px",
   0.5: "0.125rem",
@@ -85,5 +85,3 @@ const spacing = {
 };
 
 export type Palette = typeof palette;
-
-export { palette, fontSizes, spacing };

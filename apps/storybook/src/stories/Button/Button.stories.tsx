@@ -1,14 +1,51 @@
+import { Button } from "@repo/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn, within, expect, fireEvent } from "@storybook/test";
-import { Button } from "@repo/ui/components";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<typeof Button> = {
   component: Button,
-  parameters: {},
+  parameters: {
+    controls: { hideNoControlsWarning: true, expanded: true },
+    actions: { argTypesRegex: "^on.*" },
+  },
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: fn(), children: "Button" },
+  argTypes: {
+    children: {
+      description: "Button text",
+      control: { type: "text" },
+    },
+    variant: {
+      control: {
+        type: "select",
+        labels: {
+          primary: "Primary",
+          default: "Default",
+          destructive: "Destructive",
+          info: "Info",
+          outline: "Outline",
+          ghost: "Ghost",
+          link: "Link",
+        },
+      },
+      description: "Button variant",
+      table: {
+        category: "Variants",
+        defaultValue: { summary: "primary" },
+      },
+      options: [
+        "primary",
+        "default",
+        "destructive",
+        "info",
+        "outline",
+        "ghost",
+        "link",
+      ],
+    },
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;

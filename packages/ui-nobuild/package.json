@@ -1,8 +1,8 @@
 {
   "name": "@repo/ui-nobuild",
   "version": "1.0.0",
+  "private": true,
   "description": "",
-  "main": "index.js",
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "tsc  && cpx \"src/**/*.{js,jsx}\" dist",
-    "docs": "node script.js"
+    "docs": "node script.mjs"
   },
   "dependencies": {
     "@repo/typescript-config": "workspace:*",
@@ -19,7 +19,6 @@
     "@types/react-dom": "^18.3.0",
     "cpx": "^1.5.0",
     "react": "^18.2.0",
-    "react-docgen": "^7.0.3",
     "react-dom": "^18.2.0",
     "typescript": "^5.5.3"
   },
@@ -27,6 +26,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "react-docgen": "^7.0.3",
     "react-docgen-typescript": "^2.2.2"
   }
 }

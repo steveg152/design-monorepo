@@ -2,16 +2,24 @@
   "name": "@repo/tokens",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "tsup",
     "clean": "rm -rf dist node_modules"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "tsup": "^8.1.0",
     "typescript": "^5.4.5"
   }
 }

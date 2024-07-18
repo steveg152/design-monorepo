@@ -1,1 +1,1 @@
-export { palette, fontSizes, spacing } from "./tokens";
+export * from "./tokens";

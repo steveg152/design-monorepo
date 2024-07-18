@@ -19,7 +19,8 @@
       "require": "./dist/components/index.js",
       "types": "./dist/components/index.d.ts"
     },
-    "./tailwind.css": "./dist/tailwind.css"
+    "./tailwind.css": "./dist/tailwind.css",
+    "./types": "./dist/components/index.d.ts"
   },
   "scripts": {
     "build": "tsup && tsc && tailwindcss -i ./src/styles.css -o ./dist/tailwind.css",
