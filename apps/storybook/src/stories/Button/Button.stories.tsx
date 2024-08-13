@@ -46,15 +46,15 @@ const meta: Meta<typeof Button> = {
       ],
     },
   },
-} satisfies Meta<typeof Button>;
+};
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Button>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: { children: "Primary", variant: "primary" },
-} satisfies Story;
+};
 
 const handleClick = fn();
 
@@ -77,8 +77,7 @@ export const Default: Story = {
 
 export const DefaultDisabled: Story = {
   args: { variant: "default", disabled: true },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
+  play: async ({ canvas }) => {
     const button = await canvas.findByRole("button");
     expect(button).toBeDisabled();
     fireEvent.click(button);
