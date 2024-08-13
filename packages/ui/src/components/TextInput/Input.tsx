@@ -1,3 +1,4 @@
+import React from "react";
 import clsx from "clsx";
 import { ComponentProps } from "react";
 
@@ -13,7 +14,7 @@ const Input = ({ label, unlabeled, placeholder, ...props }: InputProps) => {
       <span
         className={clsx(
           "inline-flex py-1 font-semibold",
-          unlabeled && "sr-only",
+          unlabeled && "sr-only"
         )}
       >
         {label}

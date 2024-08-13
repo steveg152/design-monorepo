@@ -1,5 +1,5 @@
-const docgen = require("react-docgen-typescript");
-const fs = require("fs");
+import docgen from "react-docgen-typescript";
+import fs from "fs";
 
 // Configure parser options for react-docgen-typescript
 const options = {
@@ -8,7 +8,7 @@ const options = {
   shouldExtractLiteralValuesFromEnum: true,
   shouldRemoveUndefinedFromOptional: true,
   // Resolve named exports for documentation
-  componentNameResolver: (exp, source) => {
+  componentNameResolver: (exp) => {
     // Assuming any export that starts with an uppercase letter is a component
     if (exp.name[0] === exp.name[0].toUpperCase()) {
       return exp.name;
