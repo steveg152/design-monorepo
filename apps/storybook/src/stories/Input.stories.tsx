@@ -1,4 +1,4 @@
-import { TextInput } from "@repo/ui/components";
+import { TextInput } from "@repo/ui";
 import { Meta, StoryObj } from "@storybook/react";
 import { expect, userEvent, within } from "@storybook/test";
 

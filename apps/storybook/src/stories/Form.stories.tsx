@@ -1,4 +1,4 @@
-import { Button, Form, TextInput } from "@repo/ui/components";
+import { Button, Form, TextInput } from "@repo/ui";
 import { Meta } from "@storybook/react";
 import { expect, fn, userEvent, within } from "@storybook/test";
 
@@ -22,10 +22,6 @@ const handleSubmit = fn();
 
 export const Default: Story = {
   args: {
-    onSubmit: (event: React.FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
-      handleSubmit(event);
-    },
     children: (
       <>
         <TextInput label="First Name" />
@@ -56,10 +52,6 @@ export const Default: Story = {
 
 export const Disabled: Story = {
   args: {
-    onSubmit: (event: React.FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
-      handleSubmit(event);
-    },
     children: (
       <>
         <TextInput label="First Name" disabled />

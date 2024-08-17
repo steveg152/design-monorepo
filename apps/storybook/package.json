@@ -19,7 +19,6 @@
     "@repo/tokens": "workspace:*",
     "@repo/ui": "workspace:*",
     "@repo/ui-nobuild": "workspace:*",
-    "@repo/ui-radix": "workspace:*",
     "@repo/ui-react-aria": "workspace:*",
     "@storybook/addon-a11y": "^8.2.6",
     "@storybook/addon-themes": "^8.2.6",

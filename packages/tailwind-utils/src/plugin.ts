@@ -42,16 +42,8 @@ export const zeus = plugin(
         info: "var(--info-text)",
         destructive: "var(--destructive-text)",
       }),
-      // extend: {
-      //   colors: {
-      //     ...palette,
-      //     brand: "var(--primary)",
-      //     "brand-text": "var(--primary-text)",
-      //     green: "var(--success)",
-      //     blue: "var(--info)",
-      //     red: "var(--danger)",
-      //   },
-      // },
     },
   }
 );
+
+export default zeus;

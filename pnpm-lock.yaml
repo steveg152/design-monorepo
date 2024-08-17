@@ -36,9 +36,6 @@ importers:
       '@repo/ui-nobuild':
         specifier: workspace:*
         version: link:../../packages/ui-nobuild
-      '@repo/ui-radix':
-        specifier: workspace:*
-        version: link:../../packages/ui-radix
       '@repo/ui-react-aria':
         specifier: workspace:*
         version: link:../../packages/ui-react-aria
@@ -185,7 +182,7 @@ importers:
         version: 20.14.9
       tsup:
         specifier: ^8.1.0
-        version: 8.1.0(@swc/core@1.7.1)(postcss@8.4.39)(ts-node@10.9.2(@swc/core@1.7.1)(@types/node@20.14.9)(typescript@5.5.3))(typescript@5.5.3)
+        version: 8.1.0(@swc/core@1.7.1)(postcss@8.4.39)(ts-node@10.9.2(@swc/core@1.7.1)(@types/node@20.14.9)(typescript@5.5.4))(typescript@5.5.4)
 
   packages/eslint-config:
     devDependencies:
@@ -215,11 +212,26 @@ importers:
     dependencies:
       tailwindcss:
         specifier: ^3.4.3
-        version: 3.4.4(ts-node@10.9.2)
+        version: 3.4.4(ts-node@10.9.2(@swc/core@1.7.1)(@types/node@20.14.9)(typescript@5.5.4))
     devDependencies:
       '@repo/tokens':
         specifier: workspace:*
         version: link:../tokens
+      '@types/node':
+        specifier: ^20.11.24
+        version: 20.14.9
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      tailwind-merge:
+        specifier: ^2.3.0
+        version: 2.3.0
+      tsup:
+        specifier: ^8.1.0
+        version: 8.1.0(@swc/core@1.7.1)(postcss@8.4.39)(ts-node@10.9.2(@swc/core@1.7.1)(@types/node@20.14.9)(typescript@5.5.4))(typescript@5.5.4)
+      typescript:
+        specifier: ^5.5.4
+        version: 5.5.4
 
   packages/tokens:
     dependencies:
@@ -284,6 +296,15 @@ importers:
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
+      '@testing-library/dom':
+        specifier: ^10.4.0
+        version: 10.4.0
+      '@testing-library/jest-dom':
+        specifier: ^6.4.8
+        version: 6.4.8
+      '@testing-library/react':
+        specifier: ^16.0.0
+        version: 16.0.0(@testing-library/dom@10.4.0)(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@turbo/gen':
         specifier: ^1.12.4
         version: 1.13.4(@swc/core@1.7.1)(@types/node@20.14.9)(typescript@5.5.2)
@@ -294,10 +315,10 @@ importers:
         specifier: ^20.11.24
         version: 20.14.9
       '@types/react':
-        specifier: ^18.2.61
+        specifier: ^18.3.3
         version: 18.3.3
       '@types/react-dom':
-        specifier: ^18.2.19
+        specifier: ^18.3.0
         version: 18.3.0
       autoprefixer:
         specifier: ^10.4.19
@@ -413,7 +434,7 @@ importers:
         version: 4.18.0
       rollup-plugin-typescript2:
         specifier: ^0.36.0
-        version: 0.36.0(rollup@4.18.0)(typescript@5.5.3)
+        version: 0.36.0(rollup@4.18.0)(typescript@5.5.4)
     devDependencies:
       tslib:
         specifier: ^2.6.3
@@ -3054,6 +3075,10 @@ packages:
     resolution: {integrity: sha512-wdsYKy5zupPyLCW2Je5DLHSxSfbIp6h80WoHOQc+RPtmPGA52O9x5MJEkv92Sjonpq+poOAtUKhh1kBGAXBrNA==}
     engines: {node: '>=18'}
 
+  '@testing-library/dom@10.4.0':
+    resolution: {integrity: sha512-pemlzrSESWbdAloYml3bAJMEfNh1Z7EduzqPKprCH5S341frlpYnUEW0H72dLxa6IsYr+mPno20GiSm+h9dEdQ==}
+    engines: {node: '>=18'}
+
   '@testing-library/jest-dom@6.4.5':
     resolution: {integrity: sha512-AguB9yvTXmCnySBP1lWjfNNUwpbElsaQ567lt2VdGqAdHtpieLgjmcVyv1q7PMIvLbgpDdkWV5Ydv3FEejyp2A==}
     engines: {node: '>=14', npm: '>=6', yarn: '>=1'}
@@ -3073,6 +3098,25 @@ packages:
       jest:
         optional: true
       vitest:
+        optional: true
+
+  '@testing-library/jest-dom@6.4.8':
+    resolution: {integrity: sha512-JD0G+Zc38f5MBHA4NgxQMR5XtO5Jx9g86jqturNTt2WUfRmLDIY7iKkWHDCCTiDuFMre6nxAD5wHw9W5kI4rGw==}
+    engines: {node: '>=14', npm: '>=6', yarn: '>=1'}
+
+  '@testing-library/react@16.0.0':
+    resolution: {integrity: sha512-guuxUKRWQ+FgNX0h0NS0FIq3Q3uLtWVpBzcLOggmfMoUpgBnzBzvLLd4fbm6yS8ydJd94cIfY4yP9qUQjM2KwQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@testing-library/dom': ^10.0.0
+      '@types/react': ^18.0.0
+      '@types/react-dom': ^18.0.0
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
         optional: true
 
   '@testing-library/user-event@14.5.2':
@@ -7874,6 +7918,11 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  typescript@5.5.4:
+    resolution: {integrity: sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
   ufo@1.5.3:
     resolution: {integrity: sha512-Y7HYmWaFwPUmkoQCUIAYpKqkOf+SbVj/2fJJZ4RJMCfZp0rTGwRbzQD+HghfnhKOjL9E01okqz+ncJskGYfBNw==}
 
@@ -11687,6 +11736,17 @@ snapshots:
       lz-string: 1.5.0
       pretty-format: 27.5.1
 
+  '@testing-library/dom@10.4.0':
+    dependencies:
+      '@babel/code-frame': 7.24.7
+      '@babel/runtime': 7.24.7
+      '@types/aria-query': 5.0.4
+      aria-query: 5.3.0
+      chalk: 4.1.2
+      dom-accessibility-api: 0.5.16
+      lz-string: 1.5.0
+      pretty-format: 27.5.1
+
   '@testing-library/jest-dom@6.4.5(@jest/globals@29.7.0)(jest@29.7.0(@types/node@20.14.9)(ts-node@10.9.2(@swc/core@1.7.1(@swc/helpers@0.5.11))(@types/node@20.14.9)(typescript@5.5.3)))(vitest@1.6.0(@types/node@20.14.9)(jsdom@24.1.1)(terser@5.31.1))':
     dependencies:
       '@adobe/css-tools': 4.4.0
@@ -11701,6 +11761,27 @@ snapshots:
       '@jest/globals': 29.7.0
       jest: 29.7.0(@types/node@20.14.9)(ts-node@10.9.2(@swc/core@1.7.1(@swc/helpers@0.5.11))(@types/node@20.14.9)(typescript@5.5.3))
       vitest: 1.6.0(@types/node@20.14.9)(jsdom@24.1.1)(terser@5.31.1)
+
+  '@testing-library/jest-dom@6.4.8':
+    dependencies:
+      '@adobe/css-tools': 4.4.0
+      '@babel/runtime': 7.24.7
+      aria-query: 5.3.0
+      chalk: 3.0.0
+      css.escape: 1.5.1
+      dom-accessibility-api: 0.6.3
+      lodash: 4.17.21
+      redent: 3.0.0
+
+  '@testing-library/react@16.0.0(@testing-library/dom@10.4.0)(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@babel/runtime': 7.24.7
+      '@testing-library/dom': 10.4.0
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    optionalDependencies:
+      '@types/react': 18.3.3
+      '@types/react-dom': 18.3.0
 
   '@testing-library/user-event@14.5.2(@testing-library/dom@10.1.0)':
     dependencies:
@@ -13664,6 +13745,16 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  eslint-module-utils@2.8.1(@typescript-eslint/parser@7.14.1(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.2))(eslint-import-resolver-node@0.3.9)(eslint@9.9.0(jiti@1.21.6)):
+    dependencies:
+      debug: 3.2.7
+    optionalDependencies:
+      '@typescript-eslint/parser': 7.14.1(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.2)
+      eslint: 9.9.0(jiti@1.21.6)
+      eslint-import-resolver-node: 0.3.9
+    transitivePeerDependencies:
+      - supports-color
+
   eslint-plugin-eslint-comments@3.2.0(eslint@9.9.0(jiti@1.21.6)):
     dependencies:
       escape-string-regexp: 1.0.5
@@ -13680,7 +13771,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 9.9.0(jiti@1.21.6)
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.8.1(@typescript-eslint/parser@6.21.0(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.2))(eslint-plugin-import@2.29.1)(eslint@9.9.0(jiti@1.21.6)))(eslint@9.9.0(jiti@1.21.6))
+      eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.14.1(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.2))(eslint-import-resolver-node@0.3.9)(eslint@9.9.0(jiti@1.21.6))
       hasown: 2.0.2
       is-core-module: 2.14.0
       is-glob: 4.0.3
@@ -16343,13 +16434,13 @@ snapshots:
       postcss: 8.4.39
       ts-node: 10.9.2(@swc/core@1.7.1)(@types/node@20.14.9)(typescript@5.5.2)
 
-  postcss-load-config@4.0.2(postcss@8.4.39)(ts-node@10.9.2(@swc/core@1.7.1)(@types/node@20.14.9)(typescript@5.5.3)):
+  postcss-load-config@4.0.2(postcss@8.4.39)(ts-node@10.9.2(@swc/core@1.7.1)(@types/node@20.14.9)(typescript@5.5.4)):
     dependencies:
       lilconfig: 3.1.2
       yaml: 2.4.5
     optionalDependencies:
       postcss: 8.4.39
-      ts-node: 10.9.2(@swc/core@1.7.1)(@types/node@20.14.9)(typescript@5.5.3)
+      ts-node: 10.9.2(@swc/core@1.7.1)(@types/node@20.14.9)(typescript@5.5.4)
 
   postcss-nested@6.0.1(postcss@8.4.39):
     dependencies:
@@ -16907,7 +16998,7 @@ snapshots:
     dependencies:
       glob: 7.2.3
 
-  rollup-plugin-typescript2@0.36.0(rollup@4.18.0)(typescript@5.5.3):
+  rollup-plugin-typescript2@0.36.0(rollup@4.18.0)(typescript@5.5.4):
     dependencies:
       '@rollup/pluginutils': 4.2.1
       find-cache-dir: 3.3.2
@@ -16915,7 +17006,7 @@ snapshots:
       rollup: 4.18.0
       semver: 7.6.2
       tslib: 2.6.3
-      typescript: 5.5.3
+      typescript: 5.5.4
 
   rollup@4.18.0:
     dependencies:
@@ -17471,7 +17562,7 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  tailwindcss@3.4.4(ts-node@10.9.2):
+  tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.7.1)(@types/node@20.14.9)(typescript@5.5.4)):
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
@@ -17490,7 +17581,7 @@ snapshots:
       postcss: 8.4.39
       postcss-import: 15.1.0(postcss@8.4.39)
       postcss-js: 4.0.1(postcss@8.4.39)
-      postcss-load-config: 4.0.2(postcss@8.4.39)(ts-node@10.9.2(@swc/core@1.7.1)(@types/node@20.14.9)(typescript@5.5.3))
+      postcss-load-config: 4.0.2(postcss@8.4.39)(ts-node@10.9.2(@swc/core@1.7.1)(@types/node@20.14.9)(typescript@5.5.4))
       postcss-nested: 6.0.1(postcss@8.4.39)
       postcss-selector-parser: 6.1.0
       resolve: 1.22.8
@@ -17675,7 +17766,7 @@ snapshots:
     optionalDependencies:
       '@swc/core': 1.7.1(@swc/helpers@0.5.11)
 
-  ts-node@10.9.2(@swc/core@1.7.1)(@types/node@20.14.9)(typescript@5.5.3):
+  ts-node@10.9.2(@swc/core@1.7.1)(@types/node@20.14.9)(typescript@5.5.4):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
@@ -17689,7 +17780,7 @@ snapshots:
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
-      typescript: 5.5.3
+      typescript: 5.5.4
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     optionalDependencies:
@@ -17737,7 +17828,7 @@ snapshots:
       - supports-color
       - ts-node
 
-  tsup@8.1.0(@swc/core@1.7.1)(postcss@8.4.39)(ts-node@10.9.2(@swc/core@1.7.1)(@types/node@20.14.9)(typescript@5.5.3))(typescript@5.5.3):
+  tsup@8.1.0(@swc/core@1.7.1)(postcss@8.4.39)(ts-node@10.9.2(@swc/core@1.7.1)(@types/node@20.14.9)(typescript@5.5.4))(typescript@5.5.4):
     dependencies:
       bundle-require: 4.2.1(esbuild@0.21.5)
       cac: 6.7.14
@@ -17747,7 +17838,7 @@ snapshots:
       execa: 5.1.1
       globby: 11.1.0
       joycon: 3.1.1
-      postcss-load-config: 4.0.2(postcss@8.4.39)(ts-node@10.9.2(@swc/core@1.7.1)(@types/node@20.14.9)(typescript@5.5.3))
+      postcss-load-config: 4.0.2(postcss@8.4.39)(ts-node@10.9.2(@swc/core@1.7.1)(@types/node@20.14.9)(typescript@5.5.4))
       resolve-from: 5.0.0
       rollup: 4.18.0
       source-map: 0.8.0-beta.0
@@ -17756,7 +17847,7 @@ snapshots:
     optionalDependencies:
       '@swc/core': 1.7.1(@swc/helpers@0.5.11)
       postcss: 8.4.39
-      typescript: 5.5.3
+      typescript: 5.5.4
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -17873,6 +17964,8 @@ snapshots:
   typescript@5.5.2: {}
 
   typescript@5.5.3: {}
+
+  typescript@5.5.4: {}
 
   ufo@1.5.3: {}
 

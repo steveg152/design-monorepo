@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buttonVariants } from "./buttonVariants";
+import { buttonVariants } from "../buttonVariants";
 
 describe("buttonVariants", () => {
   it("should return the default variant", () => {

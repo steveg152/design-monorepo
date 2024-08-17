@@ -1,12 +1,12 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig((options) => ({
-  entry: ["src/components/index.ts"],
+  entry: ["src/index.ts"],
   outDir: "dist",
   format: ["esm"],
+  metafile: true,
   dts: true,
-  sourcemap: true,
-  // treeshake: true,
-  external: ["react", "react-dom"],
+  skipNodeModulesBundle: true,
+  external: [],
   ...options,
 }));

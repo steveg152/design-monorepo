@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 
-import { cn } from "../../lib/utils";
-import { buttonVariants } from "../../variants/buttonVariants";
+import { cn } from "@repo/tailwind-utils";
+import { buttonVariants } from "./buttonVariants";
 import { VariantProps } from "class-variance-authority";
 
 export interface ButtonProps

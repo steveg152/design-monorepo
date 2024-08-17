@@ -1,8 +1,7 @@
 "use client";
 
 import styles from "./page.module.css";
-import { Button } from "@repo/ui/components";
-import { TextInput } from "@repo/ui/components";
+import { Button, TextInput } from "@repo/ui";
 import { Select } from "@repo/ui-react-aria";
 import "../global.css";
 import { Atom } from "lucide-react";
