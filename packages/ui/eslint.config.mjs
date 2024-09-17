@@ -3,6 +3,20 @@ import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import reactRefresh from "eslint-plugin-react-refresh";
+import testingLibrary from "eslint-plugin-testing-library";
+import { fixupPluginRules } from "@eslint/compat";
+
+const rtl = {
+  files: ["**/*.test.{ts,tsx}"],
+  plugins: {
+    "testing-library": fixupPluginRules({
+      rules: testingLibrary.rules,
+    }),
+  },
+  rules: {
+    ...testingLibrary.configs["flat/react"].rules,
+  },
+};
 
 export default [
   {
@@ -24,6 +38,7 @@ export default [
       },
     },
   },
+  rtl,
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,

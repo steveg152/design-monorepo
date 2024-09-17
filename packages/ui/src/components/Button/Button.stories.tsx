@@ -1,4 +1,5 @@
-import { Button } from "@repo/ui";
+import React from "react";
+import { Button } from "../Button/Button.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn, within, expect, fireEvent } from "@storybook/test";
 
