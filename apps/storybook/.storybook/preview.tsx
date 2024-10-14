@@ -6,7 +6,7 @@ import "@repo/ui-react-aria/dist/tailwind.css";
 import { inject } from "@vercel/analytics";
 import { Analytics } from "@vercel/analytics/react";
 
-// inject();
+inject();
 
 const preview: Preview = {
   parameters: {

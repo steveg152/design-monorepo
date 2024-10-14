@@ -4,7 +4,7 @@ import { join, dirname } from "path";
 
 import { inject } from "@vercel/analytics";
 
-inject();
+// inject();
 
 /**
  * This function is used to resolve the absolute path of a package.
