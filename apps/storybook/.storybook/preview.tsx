@@ -6,7 +6,7 @@ import "@repo/ui-react-aria/dist/tailwind.css";
 import { inject } from "@vercel/analytics";
 import { Analytics } from "@vercel/analytics/react";
 
-inject();
+// inject();
 
 const preview: Preview = {
   parameters: {
@@ -19,13 +19,13 @@ const preview: Preview = {
   },
 
   decorators: [
-    // (Story) => (
-    //   <div style={{ margin: "3em" }}>
-    //     {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
-    //     <Story />
-    //     <Analytics />
-    //   </div>
-    // ),
+    (Story) => (
+      <div style={{ margin: "3em" }}>
+        {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
+        <Story />
+        <Analytics />
+      </div>
+    ),
     withThemeByDataAttribute({
       defaultTheme: "dark",
       themes: {
