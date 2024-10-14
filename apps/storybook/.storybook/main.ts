@@ -2,6 +2,10 @@ import type { StorybookConfig } from "@storybook/react-vite";
 
 import { join, dirname } from "path";
 
+import { inject } from "@vercel/analytics";
+
+inject();
+
 /**
  * This function is used to resolve the absolute path of a package.
  * It is needed in projects that use Yarn PnP or are set up within a monorepo.
@@ -52,13 +56,13 @@ const config: StorybookConfig = {
       },
     },
   },
-  previewHead: (head) => `
-  ${head}
-  <script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/insights/script.js"></script>
-  `,
+  //   previewHead: (head) => `
+  //   ${head}
+  //   <script>
+  //   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  //   </script>
+  //   <script defer src="/_vercel/insights/script.js"></script>
+  //   `,
 };
 export default config;
 
