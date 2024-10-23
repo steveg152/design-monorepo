@@ -1,0 +1,4 @@
+# Add 'Documentation' label to any changes within 'docs' folder or any subfolders
+UI:
+  - changed-files:
+      - any-glob-to-any-file: packages/ui/**
