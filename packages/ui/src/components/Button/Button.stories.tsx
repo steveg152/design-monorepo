@@ -15,7 +15,7 @@ const meta: Meta<typeof Button> = {
   args: { onClick: fn(), children: "Button" },
   argTypes: {
     children: {
-      description: "Button text",
+      description: "Button",
       control: { type: "text" },
     },
     variant: {
